@@ -1,32 +1,65 @@
 class Validation {
-  isValidFirstName(FirstName) {
-    if (FirstName === null || FirstName === '') {
+  isValidFirstName(firstName) {
+    if (typeof firstName !== 'string' || firstName === '') {
       return false;
     }
-  }
-
-  isValidLastName() {
+    if (firstName.length < 2) {
+      return false;
+    }
+    if (firstName[0].toLowerCase() === firstName[0]) {
+      return false;
+    }
+    if (firstName.slice(1).toLowerCase() !== firstName.slice(1)) {
+      return false;
+    }
     return true;
   }
 
-  isValidEmail() {
+  isValidLastName(lastName) {
+    if (typeof lastName !== 'string' || lastName === '') {
+      return false;
+    }
+    if (lastName.length < 2) {
+      return false;
+    }
     return true;
   }
+
+  isValidEmail(email) {
+    var mailformat = /^[^@]+@\w+(\.\w+)+\w$/;
+    if(typeof email !== 'string')
+      return false;  
+    if (email.match(mailformat)) {
+      return true;
+    } else {
+    return false;
+  }
+}
 
   isValidMessage(message) {
-    if (typeof message !== 'string' || message === null || message === '') {
+    if (typeof message !== 'string' || message === '') {
       return false;
     }
     return true;
   }
 
-  isValidPhoneNumber() {
+  isValidPhoneNumber(number) {
+    if (typeof number !== 'number') {
+      return false
+    }
     return true;
   }
 
-  isValidMonthName() {
-    return true;
-  }
+  /*isValidMonthName(month, lang) {
+    const monthName = {
+      lt: ['sausis', 'vasaris'],
+      en: ['jan', 'fab']
+    }
+    if (!monthName[lang].includes(month)) {
+      return false
+    }
+    return true ;
+  }*/
 
   isValidWeekdayName() {
     return true;

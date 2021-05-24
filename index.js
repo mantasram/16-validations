@@ -16,14 +16,22 @@ kiek imanoma optimizuoti - pasistengti nerasyti tu paciu validaciju skirtingose 
 const Validation = require('./js/Validation.js');
 
 const v = new Validation();
+ /*
+console.assert(v.isValidFirstName('Vardenis') === true, 'ERROR');
+console.assert(v.isValidLastName('Pavardenis') === true, 'ERROR');
+console.assert(v.isValidEmail('demo@exmaple.com') === true, 'ERROR');
+console.assert(v.isValidEmail('demo@exmaplecom') === false, 'ERROR');
+console.assert(v.isValidEmail('21351') === false, 'ERROR');
+console.assert(v.isValidEmail(23) === false, 'ERROR');
+console.assert(v.isValidEmail(['45', 15]) === false, 'ERROR');
+console.assert(v.isValidMessage('message') === true, 'ERROR');
+console.assert(v.isValidPhoneNumber(+37061234567) === true, 'ERROR');
+console.assert(v.isValidPhoneNumber('+37061234567') === false, 'ERROR');
+console.assert(v.isValidPhoneNumber([1,1]) === false, 'ERROR');
+console.assert(v.isValidMonthName('Sausis') === true, 'ERROR');
+console.assert(v.isValidMonthName('January') === true, 'ERROR');
+console.assert(v.isValidWeekdayName('Pirmadienis') === true, 'ERROR');
+console.assert(v.isValidWeekdayName('Monday') === true, 'ERROR');
+console.assert(v.isValidPersonID(39912311234), true);
+*/
 
-console.log(v.isValidFirstName('Vardenis'), true);
-console.log(v.isValidLastName('Pavardenis'), true);
-console.log(v.isValidEmail('demo@exmaple.com'), true);
-console.log(v.isValidMessage('message'), true);
-console.log(v.isValidPhoneNumber(+37061234567), true);
-console.log(v.isValidMonthName('Sausis'), true);
-console.log(v.isValidMonthName('January'), true);
-console.log(v.isValidWeekdayName('Pirmadienis'), true);
-console.log(v.isValidWeekdayName('Monday'), true);
-console.log(v.isValidPersonID(39912311234), true);
